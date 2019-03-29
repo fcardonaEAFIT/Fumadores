@@ -11,7 +11,7 @@ public class Agente implements Runnable {
     public void run() {
 
 	Random r = new Random();
-	
+
 	while (true) {
 
 	    EnumFumadores fumador = EnumFumadores.NOFUMADOR;
@@ -26,13 +26,13 @@ public class Agente implements Runnable {
 		fumador = EnumFumadores.NOCERILLA;
 		break;
 	    }
+	    System.out.println("Agente: despertando " + fumador);
 	    mesa.ponerIngrediente(fumador);
-	    // Fuma
 	    try {
 		Thread.sleep(Math.abs(r.nextInt()) % 5000 + 1000);
 	    }
 	    catch (InterruptedException ie) { }
-	   
+
 	    mesa.obtenerSeñalAgente();
 	    try {
 		Thread.sleep(Math.abs(r.nextInt()) % 5000 + 1000);

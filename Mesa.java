@@ -10,7 +10,7 @@ public class Mesa {
 
     public synchronized void ponerIngrediente(EnumFumadores fumador) {
 	siguiente = fumador;
-	notify();
+	notifyAll();
     }
 
     public synchronized void obtenerIngredientes(EnumFumadores fumador) {
@@ -31,6 +31,6 @@ public class Mesa {
 
     public synchronized void ponerSeñalAgente() {
 	señalAgente = EnumAgente.AGENTE;
-	notify();
+	notifyAll();
     }
 }
